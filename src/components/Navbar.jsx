@@ -14,6 +14,11 @@ const Navbar = () => {
 
   console.log("Navbar user:", user); // Debugging untuk memeriksa status user
 
+  // useEffect(() => {
+  //   if (user) console.log('User loaded:', user);
+  // }, [user]);
+
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;

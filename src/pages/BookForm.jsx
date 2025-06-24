@@ -74,11 +74,13 @@ const BookForm = () => {
         total_price: tripPrice * ticketCount,
       };
 
-      // 1️⃣ Buat booking di DB
+      // Buat booking di DB
       const bookingRes = await Api.post('/bookings', payload);
       const { data: bookingData, snapToken } = bookingRes.data;
 
-      // 3️⃣ Panggil Midtrans Snap Popup
+      console.log('Snap token:', snapToken);
+
+      // Panggil Midtrans Snap Popup
       window.snap.pay(snapToken, {
       onSuccess: (result) => {
         navigate('/', { state: { bookingId: bookingData.id } });
