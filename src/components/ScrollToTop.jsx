@@ -74,11 +74,11 @@ const ScrollToTop = () => {
         `}
       </style>
       <div
-        className={`fixed bottom-6 right-6 w-12 h-12 bg-[#344CB7] border-2 border-gray-300 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
+        className={`fixed bottom-6 right-6 w-12 h-12 bg-[#31511E] border-1 border-white rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
           isVisible
             ? "opacity-100 animate-slide-up scale-100"
             : "opacity-0 animate-slide-down scale-100 pointer-events-none"
-        } hover:scale-110 active:scale-95 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400`}
+        } hover:scale-110 active:scale-95 hover:bg-[#78A45E] focus:outline-none focus:ring-2 focus:ring-white`}
         onClick={scrollToTop}
         role="button"
         aria-label="Scroll to top"

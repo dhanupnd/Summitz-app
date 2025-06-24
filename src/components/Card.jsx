@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Api from "../api";
+import { useAuth } from "../context/AuthContext";
 
 const Card = () => {
+  const { searchQuery } = useAuth();
   const [trips, setTrips] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,30 +28,34 @@ const Card = () => {
     return <p className="text-center text-red-600">Error: {error}</p>;
   }
 
+  // Filter trips berdasarkan searchQuery
+  const filteredTrips = trips.filter((trip) =>
+    trip.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    trip.mountain.province.province_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
-      {trips.map((trip) => (
+      {filteredTrips.map((trip) => (
         <Link to={`/trips/${trip.id}`} key={trip.id}>
-          <div className="w-60 h-[400px] bg-white flex flex-col shadow-2xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          <div className="w-60 h-[400px] bg-white flex flex-col shadow-2xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105">
             <div className="w-full h-60 rounded-2xl overflow-hidden">
               <img
-                src={trip.main_image}
+                src={`http://localhost:8000/storage/${trip.main_image}`}
                 alt={trip.title}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex flex-col gap-2 p-3 bg-yellow-50">
+            <div className="flex flex-col gap-2 p-3 bg-white">
               <p className="text-black text-start font-poppins-semibold">
                 {trip.title}
               </p>
               <p className="text-black text-start text-sm font-light">
                 {trip.duration_day}
               </p>
-
               <p className="text-black text-start text-sm font-light">
                 {trip.mountain.province.province_name}
               </p>
-
               <p className="text-black text-start text-sm">
                 IDR {trip.price} / person
               </p>

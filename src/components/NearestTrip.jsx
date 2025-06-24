@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Api from "../api";
 import { useAuth } from "../context/AuthContext";
 
-const BestTrips = () => {
+const NearestTrip = () => {
   const { searchQuery } = useAuth(); // Ambil searchQuery dari AuthContext
   const [trips, setTrips] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,8 +14,18 @@ const BestTrips = () => {
       .then((response) => {
         const tripsData = response.data.data;
 
-        const sortedTrips = tripsData.sort(
-            (a, b) => (b.reviews_avg_rating || 0) - (a.reviews_avg_rating || 0)
+        const tripsWithEarliestDate = tripsData.map((trip) => {
+          const earliestDate = trip.schedules && trip.schedules.length > 0
+            ? trip.schedules
+                .map((s) => new Date(s.departure_date))
+                .sort((a, b) => a - b)[0]
+            : new Date(9999, 0, 1);
+
+          return { ...trip, earliestDepartureDate: earliestDate };
+        });
+
+        const sortedTrips = tripsWithEarliestDate.sort(
+          (a, b) => a.earliestDepartureDate - b.earliestDepartureDate
         );
 
         setTrips(sortedTrips);
@@ -45,7 +55,7 @@ const BestTrips = () => {
     <>
       {filteredTrips.map((trip) => (
         <Link to={`/trips/${trip.id}`} key={trip.id}>
-          <div className="w-60 h-auto pb-3 bg-white flex flex-col shadow-2xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105">
+          <div className="w-60 h-auto bg-white flex flex-col shadow-2xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105">
             <div className="w-full h-60 rounded-2xl overflow-hidden">
               <img
                 src={`http://localhost:8000/storage/${trip.main_image}`}
@@ -62,6 +72,16 @@ const BestTrips = () => {
                 {trip.mountain.province.province_name}
               </p>
               <p className="text-black text-start text-sm">IDR {trip.price} / person</p>
+              <p className="text-black text-start text-sm font-medium mt-1">
+                Berangkat:{" "}
+                {trip.earliestDepartureDate
+                  ? trip.earliestDepartureDate.toLocaleDateString("id-ID", {
+                      day: "2-digit",
+                      month: "long",
+                      year: "numeric",
+                    })
+                  : "Jadwal belum tersedia"}
+              </p>
             </div>
           </div>
         </Link>
@@ -70,4 +90,4 @@ const BestTrips = () => {
   );
 };
 
-export default BestTrips;
+export default NearestTrip;

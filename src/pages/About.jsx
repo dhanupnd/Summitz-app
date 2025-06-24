@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -14,7 +13,7 @@ const About = () => {
         { platform: "x", icon: "/images/x.png", url: "" },
         { platform: "facebook", icon: "/images/facebook.png", url: "" },
       ],
-      image: "/images/fotoGue.jpg",
+      image: "/images/danil_summitz.jpg",
       phone: "0812-2844-1716",
       favorite: "Gunung Rinjani",
     },
@@ -40,7 +39,7 @@ const About = () => {
         { platform: "x", icon: "/images/x.png", url: "" },
         { platform: "facebook", icon: "/images/facebook.png", url: "" },
       ],
-      image: "/images/fotoGue.jpg",
+      image: "/images/gian.jpg",
       phone: "0853-2675-3771",
       favorite: "Gunung Merbabu",
     },
@@ -80,7 +79,7 @@ const About = () => {
             <div className="flex-1">
               <p className="text-black text-2xl sm:text-3xl font-poppins-semibold text-center mb-4">Tentang Kami</p>
               <div className="w-32 h-0.5 bg-black mx-auto mb-6"></div>
-              <p className="text-black text-sm sm:text-base font-serif text-center md:text-left px-4 sm:px-8">
+              <p className="text-black text-sm sm:text-base text-center md:text-left px-4 sm:px-8">
                 Summitz merupakan aplikasi berbasis website yang menyediakan jasa open trip pendakian gunung di seluruh Indonesia.
                 Kami menjamin pengalaman pendakian anda memiliki kesan yang tidak dapat dilupakan, mulai dari akses pembayaran yang terpercaya,
                 harga yang ekonomis, hingga perjalanan yang aman serta nyaman dengan tim yang kompeten.
@@ -103,7 +102,7 @@ const About = () => {
                 Kenali Tim Kami
               </p>
               <div className="w-32 h-0.5 bg-black mx-auto mb-6"></div>
-              <p className="text-black text-sm sm:text-base font-serif text-center md:text-left px-4 sm:px-8">
+              <p className="text-black text-sm sm:text-base text-center md:text-left px-4 sm:px-8">
                 Summitz berawal dari empat orang mahasiswa yang mendapatkan penugasan akhir dalam mata kuliah pengembangan perangkat lunak.
                 Aplikasi ini tercipta dikarenakan di dalamnya terdapat mahasiswa yang cinta akan wisata pendakian gunung,
                 yang kemudian idenya dituangkan ke dalam aplikasi berbasis website.
@@ -158,15 +157,10 @@ const About = () => {
         </section>
 
         {/* Let's Explore Together Section */}
-        <section className="w-full bg-blue-800 text-white py-12 sm:py-16 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins-semibold mb-4">Let's Explore Together</h2>
-          <p className="text-sm sm:text-base md:text-lg mb-6 px-4 sm:px-6">Carilah pengalaman dan degan kami</p>
-          <Link to="/more-trip" className="w-44 h-10 bg-white hover:bg-gray-200 rounded-full justify-center items-center mt-7 mx-auto inline-block">
-            <p className="text-black py-2 font-bold text-center">Lihat Trip</p>
-          </Link>
-
-        </section>
       </div>
+
+      <div className="w-11/12 max-w-5xl h-0.5 sm:h-1 mb-11 rounded-full bg-gray-300 mx-auto"></div>
+
       <ScrollToTop />
       <Footer />
     </section>

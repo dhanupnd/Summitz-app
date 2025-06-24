@@ -26,7 +26,7 @@ const PromotedTrip = () => {
                         Suasananya pun terasa tenang dan alami, cocok bagi pecinta petualangan dan ketenangan.
                     </p>    
 
-                    <div className='w-full sm:w-40 lg:w-32 h-10 sm:h-12 bg-white rounded-full mt-6 sm:mt-7 hover:bg-[#D9D9D9] transition-colors'>
+                    <div className='w-full sm:w-40 lg:w-32 h-10 sm:h-12 bg-white rounded-full mt-6 sm:mt-7 hover:bg-[#D9D9D9] transition-all duration-300 hover:scale-105'>
                         <Link to="/trips/12" className='block w-full h-full'>
                             <p className='px-4 py-2.5 sm:py-3 lg:py-auto text-black text-center text-sm sm:text-base font-poppins-semibold'>
                                 Lihat detail
@@ -39,7 +39,7 @@ const PromotedTrip = () => {
                 <div className='col-span-1 lg:col-start-2 lg:col-end-3 lg:row-span-3 px-4 sm:px-8 lg:pr-16 xl:pr-32 order-1 lg:order-none'>
                     <div className='flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center lg:justify-end w-full'>
                         {/* Gambar 1 */}
-                        <div className='flex-1 sm:flex-none'>
+                        <div className='flex-1 sm:flex-none transition-all duration-300 hover:scale-105'>
                             <img 
                                 src="https://i.pinimg.com/736x/01/3b/ae/013bae9c705fcad7d85be533aed0b38a.jpg" 
                                 alt="Gunung Argopuro view 1" 
@@ -48,7 +48,7 @@ const PromotedTrip = () => {
                         </div>
 
                         {/* Gambar 2 */}
-                        <div className='flex-1 sm:flex-none'>
+                        <div className='flex-1 sm:flex-none transition-all duration-300 hover:scale-105'>
                             <img 
                                 src="https://i.pinimg.com/736x/d0/27/d3/d027d3296f77ad49d757aa06c2d986e7.jpg" 
                                 alt="Gunung Argopuro" 

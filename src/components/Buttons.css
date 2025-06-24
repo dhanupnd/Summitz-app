@@ -1,0 +1,19 @@
+.star-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.submit-btn {
+    border-radius: 9999px;
+    background-color: #31511E;
+    transition: all 300ms ease-in-out;
+    font-size: small;
+}
+
+:hover.submit-btn {
+    background-color: #78A45E;
+    transform: scale(1.05);
+    border: none;
+}
