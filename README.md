@@ -1,12 +1,41 @@
-# React + Vite
+Summitz – Platform Booking Open Trip Pendakian Gunung
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Summitz adalah aplikasi berbasis website yang menyediakan layanan pemesanan open trip pendakian gunung di Indonesia. Platform ini dirancang untuk mempermudah pendaki dalam menemukan jadwal trip, memilih gunung yang diinginkan, hingga melakukan pembayaran langsung melalui aplikasi.
 
-Currently, two official plugins are available:
+🌋 Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pencarian Gunung Spesifik
+Pengguna dapat mencari gunung tertentu berdasarkan nama atau kata kunci.
 
-## Expanding the ESLint configuration
+Filter Berdasarkan Provinsi
+Menampilkan daftar gunung sesuai provinsi untuk memudahkan eksplorasi.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Detail Trip & Ulasan
+Setiap gunung memiliki informasi lengkap, termasuk detail rute, tingkat kesulitan, harga, dan ulasan peserta sebelumnya.
+
+Pemesanan dan Pembayaran
+Pengguna dapat memesan slot open trip dan melakukan pembayaran langsung melalui aplikasi Summitz.
+
+Autentikasi Pengguna
+Fitur sign up dan sign in untuk mengatur akun dan riwayat pemesanan.
+
+🛠️ Teknologi yang Digunakan
+
+Frontend: React + TailwindCSS (Vite)
+
+Backend: Laravel
+
+Database: MySQL
+
+Deployment: Upcoming (VPS / cloud platform)
+
+🧪 Status Pengembangan
+
+Proyek ini masih dalam tahap pengembangan dan akan terus diperbarui, termasuk fitur pembayaran yang lebih aman dan sistem manajemen trip bagi penyedia open trip.
+
+📬 Kontak
+
+Silakan hubungi pengembang untuk pertanyaan atau kolaborasi:
+
+Nama: Dhanu Pandhowo
+Email: dhanupandhowo29@gmail.com
