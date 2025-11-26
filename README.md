@@ -26,7 +26,6 @@ Frontend: React + TailwindCSS (Vite)
 Backend: Laravel
 
 Database: MySQL
-
 Deployment: Upcoming (VPS / cloud platform)
 
 🧪 Status Pengembangan
