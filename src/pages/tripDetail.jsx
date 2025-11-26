@@ -87,7 +87,7 @@ const TripDetail = () => {
         </div>
       </section>
 
-
+      {/* Ini perubahan di TripDetail */}
       <section className="h-28 justify-center items-center my-auto relative">
         <p className="text-start text-2xl text-black font-poppins-semibold px-14 absolute top-1/2 transform -translate-y-1/2">
           {selectedTrip.title || "Judul Tidak Tersedia"}
