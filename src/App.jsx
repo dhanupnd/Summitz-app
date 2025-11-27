@@ -5,7 +5,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
-import MoreTrips from './pages/MoreTrips';
+import MoreTrips from './pages/moreTrips';
 import BestTrips from './components/BestTrips';
 import BookForm from './pages/BookForm';
 import Profile from './pages/Profile';
